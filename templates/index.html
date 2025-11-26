@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Available Keys</h2>
+<ul>
+{% for k in keys %}
+  <li>{{ k }}</li>
+{% endfor %}
+</ul>
+<h3>Generate new keypair</h3>
+<form action="{{ url_for('generate_keys') }}" method="post">
+  Name: <input name="name" value="alice"> Bits:
+  <select name="bits"><option>2048</option><option>3072</option></select>
+  <button type="submit">Generate</button>
+</form>
+{% endblock %}

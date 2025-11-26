@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+
+
+# local files
+outbox/
+*.sqlite3
+*.log
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store

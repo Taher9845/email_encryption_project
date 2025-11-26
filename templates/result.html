@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Verification Result</h2>
+<pre>{{ result | tojson(indent=2) }}</pre>
+{% if result.status == 'ok' %}
+  <h3>Decrypted Plaintext</h3>
+  <pre>{{ result.plaintext }}</pre>
+  <h3>Headers</h3>
+  <pre>{{ result.headers | tojson(indent=2) }}</pre>
+{% endif %}
+{% endblock %}

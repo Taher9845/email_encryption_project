@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Outbox / Sent Messages (simulate inbox)</h2>
+<table>
+  <tr><th>File</th><th>From</th><th>Subject</th><th>Action</th></tr>
+  {% for m in msgs %}
+  <tr>
+    <td>{{ m.file }}</td>
+    <td>{{ m.from }}</td>
+    <td>{{ m.subject }}</td>
+    <td><a href="{{ url_for('view_message', filename=m.file) }}">View</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

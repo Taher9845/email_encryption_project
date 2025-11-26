@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Compose Secure Email</h2>
+<form method="post">
+  From (key name prefix): <input name="sender" value="alice"><br>
+  To (key name prefix): <input name="receiver" value="bob"><br>
+  Subject: <input name="subject" value="Test"><br>
+  Date: <input name="date" value=""><br>
+  Body:<br>
+  <textarea name="body" rows="8" cols="60">Hello, this is a secure test.</textarea><br>
+  <button type="submit">Encrypt & Sign (Save)</button>
+</form>
+{% endblock %}

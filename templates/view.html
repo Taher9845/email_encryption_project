@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Message: {{ filename }}</h2>
+<h3>Headers</h3>
+<pre>{{ msg.headers | tojson(indent=2) }}</pre>
+<h3>Envelope (ciphertext etc.)</h3>
+<pre>{{ msg.envelope | tojson(indent=2) }}</pre>
+<h3>Signature</h3>
+<pre>{{ msg.signature }}</pre>
+<h3>Verify & Decrypt</h3>
+<form method="post" action="{{ url_for('verify', filename=filename) }}">
+  Receiver key name (prefix): <input name="receiver_for_verify" value="bob"><br>
+  <button type="submit">Verify Signature & Decrypt</button>
+</form>
+{% endblock %}
